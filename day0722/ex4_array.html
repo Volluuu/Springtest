@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--외부 css파일 가져오기-->
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      img {
+        width: 70px;
+        height: 100px;
+        border: 1px solid gray;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>배열 초기값으로 지정하는 방법</h3>
+    <script>
+      //변수 선언 및 배열 생성
+      var arr1 = [
+        "../연예인사진/6.jpg",
+        "../연예인사진/4.jpg",
+        "../쇼핑몰사진/15.jpg",
+        "../쇼핑몰사진/20.jpg",
+      ];
+      //배열 갯수 출력
+      var s = "배열갯수:" + arr1.length + "<br>";
+      //조건문
+      for (var i = 0; i < arr1.length; i++) {
+        //img src에 경우 괄호가 필요한데 해당과 같이 사용하면 인식 가능
+        s += "<img src='" + arr1[i] + "'>";
+      }
+      document.write(s);
+    </script>
+
+    <h3>배열-new Array로 지정하는 방법 #1</h3>
+    <script>
+      //변수 선언
+      var arr2 = new Array(4);
+      //배열 생성, java와 같음
+      arr2[0] = "../쇼핑몰사진/7.jpg";
+      arr2[1] = "../쇼핑몰사진/8.jpg";
+      arr2[2] = "../쇼핑몰사진/9.jpg";
+      arr2[3] = "../쇼핑몰사진/10.jpg";
+      var s = "배열갯수:" + arr2.length + "<br>";
+      for (var i = 0; i < arr2.length; i++) {
+        //img src에 경우 괄호가 필요한데 해당과 같이 사용하면 인식 가능
+        s += "<img src='" + arr2[i] + "'>";
+      }
+      document.write(s);
+    </script>
+
+    <h3>배열-new Array로 지정하는 방법 #2</h3>
+    <script>
+      //변수 선언
+      var arr3 = new Array();
+      //배열.push로 생성가능
+      arr3.push("../음식사진/1.jpg");
+      arr3.push("../음식사진/2.jpg");
+      arr3.push("../음식사진/3.jpg");
+      arr3.push("../음식사진/4.jpg");
+      arr3.push("../음식사진/5.jpg");
+
+      var s = "배열갯수:" + arr3.length + "<br>";
+      for (var i = 0; i < arr3.length; i++) {
+        //img src에 경우 괄호가 필요한데 해당과 같이 사용하면 인식 가능
+        s += "<img src='" + arr3[i] + "'>";
+      }
+      document.write(s);
+    </script>
+
+    <h3>arr3에서 2개 pop() 후 출력</h3>
+    <script>
+      //pop은 꺼내서 없애서 3개가 출력
+      arr3.pop(); //마지막 사진 꺼내서 없앰
+      arr3.pop();
+      var s = "배열갯수:" + arr3.length + "<br>";
+      for (var i = 0; i < arr3.length; i++) {
+        //img src에 경우 괄호가 필요한데 해당과 같이 사용하면 인식 가능
+        s += "<img src='" + arr3[i] + "'>";
+      }
+      document.write(s);
+    </script>
+  </body>
+</html>

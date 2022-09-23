@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      div.out {
+        width: 600px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Table</h2>
+    <table>
+      <tr bgcolor="lightgray" height="40">
+        <th width="200">항목</th>
+        <th width="400">Select</th>
+      </tr>
+      <tr>
+        <td>입력 후 엔터</td>
+        <td>
+          <input type="text" id="txt1" placeholder="값을 입력해라" />
+        </td>
+        <td class="a"></td>
+        <td>
+          <label
+            ><input
+              type="checkbox"
+              id="chk1"
+              value="5px solid black"
+            />테두리</label
+          >
+        </td>
+        <td class="b"></td>
+      </tr>
+      <tr>
+        <td>글자크기</td>
+        <td>
+          <label><input type="radio" value="10" name="fsize" />10</label>
+          <label
+            ><input type="radio" value="20" name="fsize" checked />20</label
+          >
+          <label><input type="radio" value="30" name="fsize" />30</label>
+          <label><input type="radio" value="35" name="fsize" />35</label>
+        </td>
+        <td class="c"></td>
+      </tr>
+      <tr>
+        <td>색상 선택</td>
+        <td>
+          <input type="color" id="color1" value="#ccffff" /> 배경색
+          <input type="color" id="color2" value="#ccffff" /> 글자색
+        </td>
+        <td class="d"></td>
+      </tr>
+      <tr>
+        <td>글꼴</td>
+        <td>
+          <label
+            ><input type="radio" value="Jua" name="ffamily" checked />Jua</label
+          >
+          <label
+            ><input
+              type="radio"
+              value="Nanum Pen Script"
+              name="ffamily"
+            />Nanum</label
+          >
+          <label
+            ><input
+              type="radio"
+              value="Single Day"
+              name="ffamily"
+            />Single</label
+          >
+        </td>
+        <td class="d"></td>
+      </tr>
+    </table>
+    <div class="out">비트캠프</div>
+    <script>
+      //엔터 입력
+      document.getElementById("txt1").onkeyup = function (e) {
+        //입력값
+        var v = this.value;
+        //언터 입력 시 출력
+        if (e.keyCode == 13) {
+          document.querySelector(".out").innerHTML = v;
+        }
+      };
+      //테두리 변경
+      document.getElementById("chk1").onchange = function () {
+        //선택한 색상
+        var selcolor = this.value;
+        var s = "none";
+        var check = this.checked;
+        if (check) {
+          document.querySelector(".out").style.border = selcolor;
+          document.querySelector(".out").innerHTML =
+            document.getElementById("txt1").value;
+        } else {
+          document.querySelector(".out").style.border = s;
+          document.querySelector(".out").innerHTML = document.getElementById(s);
+        }
+      };
+
+      //글자 크기
+      var tradio = document.getElementsByName("fsize");
+      for (var i = 0; i < tradio.length; i++) {
+        tradio[i].onclick = function () {
+          //선택한 radio의 value값을 읽는다
+          var v = this.value;
+          //.e에 적용
+          document.querySelector(".out").style.fontSize = v + "px";
+        };
+      }
+
+      //배경색 변경
+      document.getElementById("color1").onchange = function () {
+        //선택한 색상
+        var selcolor = this.value;
+        //색 적용
+        document.querySelector(".out").style.backgroundColor = selcolor;
+        //색상 출력
+        document.querySelector(".out").innerHTML =
+          document.getElementById("txt1").value;
+      };
+
+      //글자색 변경
+      document.getElementById("color2").onchange = function () {
+        //선택한 색상
+        var selcolor = this.value;
+        //색 적용
+        document.querySelector(".out").style.color = selcolor;
+        //색상 출력
+        document.querySelector(".out").innerHTML =
+          document.getElementById("txt1").value;
+      };
+
+      //글꼴 변경
+      var tradio = document.getElementsByName("ffamily");
+      for (var i = 0; i < tradio.length; i++) {
+        tradio[i].onclick = function () {
+          //선택한 radio의 value값을 읽는다
+          var v = this.value;
+          //.e에 적용
+          document.querySelector(".out").style.fontFamily = v;
+        };
+      }
+    </script>
+  </body>
+</html>

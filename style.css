@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@600&family=Edu+VIC+WA+NT+Beginner:wght@500&family=Gamja+Flower&family=Indie+Flower&family=Jua&family=Merriweather:ital@1&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@500&family=Palanquin:wght@200&display=swap");
+
+body {
+  font-family: "Jua";
+}
+
+.btn {
+  width: 110px;
+  height: 35px;
+  font-family: "Jua";
+  font-size: 20px;
+  background-color: bisque;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid orange;
+  text-shadow: 5px 5px 5px orange;
+}
+
+.btn-green {
+  background-color: aquamarine;
+  color: black;
+  font-size: 18px;
+  font-family: "Jua";
+  box-shadow: ;
+}
+
+.btn-pink {
+  background-color: pink;
+  color: white;
+  text-shadow: 10px 10px 20px;
+  border: 1px pink;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+}
+
+.btn-react {
+  background-color: aquamarine;
+  color: black;
+  width: 350px;
+  height: 100;
+  font-size: 27px;
+  font-family: "Jua";
+  text-align: center;
+  cursor: pointer;
+}
+
+.bit {
+  background-color: aquamarine;
+  color: black;
+  width: 350px;
+  height: 100;
+  font-size: 27px;
+  font-family: "Jua";
+  text-align: center;
+  cursor: pointer;
+}
+
+.neon {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  color: s;
+}

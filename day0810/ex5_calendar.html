@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Edu+VIC+WA+NT+Beginner:wght@600&family=Gamja+Flower&family=Single+Day&family=Jua&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body * {
+        font-family: "Gamja Flower";
+      }
+      div.calview {
+        position: absolute;
+        left: 200px;
+        top: 50px;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        //처음에 현재 날짜로 달력 나오게 하기
+        write_calendar(curYear, curMonth);
+
+        //년도 변경 시 달력 출력하기
+        document.getElementById("selyear").onchange = function () {
+          var myyear = this.value;
+          var mymonth = document.getElementById("selmonth").value;
+
+          write_calendar(myyear, mymonth);
+        };
+
+        //월 변경 시 달력 출력
+
+        document.getElementById("selmonth").onchange = function () {
+          var myyear = document.getElementById("selyear").value;
+          var mymonth = this.value;
+
+          write_calendar(myyear, mymonth);
+        };
+      };
+      function write_calendar(year, month) {
+        var s = document.querySelector(".calendar");
+        s.innerHTML = year + "," + month;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="calview">
+      <h5 class="alert alert-warning" style="width: 600px">Java Script 달력</h5>
+      <div class="input-group">
+        <select class="form-control" style="width: 100px" id="selyear">
+          <script>
+            var curDate = new Date(); //현재 날짜와 시간
+            var curYear = curDate.getFullYear(); //현재 년도
+            var curMonth = curDate.getMonth() + 1; //현재 월(0~11)+1
+
+            for (var y = curYear; y >= 1950; y--) {
+              document.write("<option>" + y + "<option>");
+            }
+          </script>
+        </select>
+        년&nbsp;&nbsp;&nbsp;
+        <select class="form-control" style="width: 100px" id="selmonth">
+          <script>
+            for (var i = 1; i <= 12; i++) {
+              if (i == curMonth)
+                document.write("<option selected>" + i + "<option>");
+              else document.write("<option>" + i + "<option>");
+            }
+          </script>
+        </select>
+        월
+      </div>
+      <!--그룹으로 묶은 div-->
+      <br /><br />
+      <div class="calendar">111</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Edu+VIC+WA+NT+Beginner:wght@600&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--외부 css파일 가져오기-->
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      /*ID selimage에 대한 스타일 적용*/
+      #selimage {
+        font-size: 20px;
+        font-family: "Jua";
+        width: 100px;
+        color: pink;
+        border: 5px solid pink;
+      }
+      /*container 밑 img에 대한 설정 #은 id .은 class*/
+      .container div img {
+        border: 5px solid pink;
+        margin-top: 20px;
+        margin-left: 20px;
+        border-radius: 100px;
+      }
+
+      .container {
+        /*position에사 absolute는 절대 좌표, relative는 상대 좌표*/
+        position: absolute;
+        left: 200px; /*x 좌표*/
+        top: 100px; /*y 좌표*/
+        cursor: pointer;
+      }
+
+      #title {
+        font-family: "Jua";
+        color: pink;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var init_image = document.getElementById("selimage");
+        var photo = document.getElementById("photo");
+        //select 태그에서 선택된 option의 value값 얻기
+        //이 코드를 넣은 이유 : select의 이름과 사진을 동일하게 하기 위해서
+        //select를 옮기면 기존에는 이름만 바뀌었지만 지금은 사진도 같이 바뀜
+        var init_image = selimage.value;
+        //alert(init_image);
+        //현재 사진의 src 속성을 변경한다
+        photo.setAttribute("src", init_image);
+
+        //select문 이벤트-change
+        selimage.onchange = function () {
+          //모든 이벤트 함수에는 이벤를 발생한 객체에 대한 this라는
+          //변수가 기본으로 존재한다
+          //select할때마다 콘솔에서 값이 생성됨
+          console.log(this.value);
+          //사진(photo)의 src에 this.value를 적용
+          photo.setAttribute("src", this.value);
+        };
+
+        //점점 작게 버튼 이벤트
+        document.getElementById("btnsmall").onclick = function () {
+          //photo의 현재 width값 얻기 (+할 경우 반드시 숫자로 변환)
+          var w = photo.getAttribute("width");
+          console.log(w); //400
+          console.log(typeof w); //string
+          //숫자가 string으로 나와도 -,*,/등은 숫자로 계산
+          //10감소
+          w -= 10;
+          //다시 width 적용
+          photo.setAttribute("width", w);
+        };
+
+        //점점 크게 버튼 이벤트
+        document.getElementById("btnslarge").onclick = function () {
+          //parseInt를 가지고 오는 값부터 변경한다.
+          var w = parseInt(photo.getAttribute("width"));
+          console.log(w); //400
+          console.log(typeof w); //string
+          w += 10;
+          photo.setAttribute("width", w);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <!--div는 박스 개념. 추 후 style을 적용하기에 용이함-->
+    <div class="container">
+      <div class="buttons">
+        <button type="button" class="btn btn-pink" id="btnsmall">
+          점점 작게
+        </button>
+        <button type="button" class="btn btn-pink" id="btnslarge">
+          점점 크게
+        </button>
+        <!--셀렉트 제목-->
+        <b style="margin-left: 20px" id="title">사진 선택</b>
+        <!--선택 메뉴 설정-->
+        <select id="selimage">
+          <!--사진 선택 시, 해당 값을 주기 위한 고유값 설정-->
+          <option value="../연예인사진/15.jpg">설현</option>
+          <option value="../연예인사진/12.jpg">박보영</option>
+          <!--selected를 사용하면 default값 설정됨. 기존에는 맨위가 default값-->
+          <option value="../연예인사진/19.jpg" selected>수지</option>
+          <option value="../연예인사진/2.jpg">김우빈</option>
+        </select>
+      </div>
+      <div>
+        <img src="../연예인사진/19.jpg" id="photo" width="400" />
+      </div>
+    </div>
+  </body>
+</html>

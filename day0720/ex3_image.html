@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@600&family=Edu+VIC+WA+NT+Beginner:wght@500&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        div.a{
+            font-size: 2em;
+            font-family: 'Jua';
+        }
+
+        div.b>figure{
+            float: left;/*가로방향 정렬*/
+        }
+
+        div.b>figure>img{
+            border: 1px solid black;
+            border-radius: 100px;/*왼쪽 상단 모서리부터 시계방향*/
+
+        }
+
+        div.b>figure>figcaption>b
+        {
+            font-size: 15px;
+            margin-left: 20px;
+            font-family: 'Nanum Pen Script';
+        }
+
+        h3.c{
+            clear: both;/* float: left; 속성을 해제, float과 짝으로 주로 씀
+            / 해제하고 싶은 곳에서 사용하면 됨*/
+        }
+
+        div.d{
+            width: 900px;
+            height: 300px;
+            border: 2px solid gray;
+        }
+        div.d {
+            display: flex;
+            flex-direction: row;/*가로방향, cloum:세로방향, row-reverse : 가로 역방향*/
+            font-size: 30px;
+            font-family: 'Jua'; 
+            box-shadow: 10px 10px 10px;
+            text-shadow: 5px 5px 10px;     
+            text-align: center; 
+            background-image: url('bg.jpg');
+            color: white;
+        }
+
+        div.d img{
+            border: 2px inset black;
+            border-radius: 150px 150px;
+            box-shadow: 20px 20px 20px;
+        }
+        
+
+    </style>
+
+
+</head>
+<body>
+    <img src="../음식사진/1.jpg" width="200" border="10" 
+    align="left" hspace="20">
+    <div class="a">java<br>oracle<br>htmnl<br>css</div>
+    <hr>
+    <div class="b">
+        <figure>
+            <img src="../음식사진/12.jpg" width="150">
+            <figcaption><b>순두부라면</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../음식사진/4.jpg" width="150">
+            <figcaption><b>카레라이스</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../음식사진/6.jpg" width="150">
+            <figcaption><b>계란찜</b></figcaption>
+        </figure>
+
+        <h3 class="c">안녕하세요</h3>
+
+    </div>
+
+    <div class="d">
+        <figure>
+            <img src="../연예인사진/10.jpg" width="150">
+            <figcaption><b>김태희</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../연예인사진/19.jpg" width="150">
+            <figcaption><b>수지</b></figcaption>
+        </figure>
+
+        <figure>
+            <img src="../연예인사진/13.jpg" width="150">
+            <figcaption><b>박신혜</b></figcaption>
+        </figure>
+    </div>
+
+</body>
+</html>

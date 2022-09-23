@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Edu+VIC+WA+NT+Beginner:wght@600&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <!--외부 css파일 가져오기-->
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      #result {
+        text-align: center;
+        margin-left: 780px;
+      }
+      #imga {
+        border-radius: 100px 100px 100px;
+        margin-left: 0;
+      }
+      #a {
+        text-align: center;
+        height: 20px;
+        line-height: 20px;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var r = document.getElementById("result");
+        //image의 요소 값
+        var photo = document.getElementById("imga");
+
+        document.getElementById("btn1").onclick = function () {
+          var imgpath = "../음식사진/1.jpg";
+          photo.setAttribute("src", imgpath);
+          r.innerHTML = "샌드위치";
+        };
+        document.getElementById("btn2").onclick = function () {
+          var imgpath = "../음식사진/2.jpg";
+          photo.setAttribute("src", imgpath);
+          r.innerHTML = "꼬치";
+        };
+        document.getElementById("btn3").onclick = function () {
+          var imgpath = "../음식사진/3.jpg";
+          photo.setAttribute("src", imgpath);
+          r.innerHTML = "라면";
+        };
+        document.getElementById("btn4").onclick = function () {
+          photo.setAttribute("width", 300);
+        };
+        document.getElementById("btn5").onclick = function () {
+          photo.setAttribute("width", 500);
+        };
+        document.getElementById("btn6").onclick = function () {
+          photo.setAttribute("width", 700);
+        };
+      };
+    </script>
+  </head>
+
+  <body align="center" id="a">
+    <button type="button" class="btn" id="btn1">샌드위치</button>
+    <button type="button" class="btn" id="btn2">꼬치</button>
+    <button type="button" class="btn" id="btn3">라면</button>
+    <br />
+    <br />
+    <button type="button" class="btn" id="btn4">작게</button>
+    <button type="button" class="btn" id="btn5">원래대로</button>
+    <button type="button" class="btn" id="btn6">크게</button>
+    <br /><br />
+    <img src="../음식사진/1.jpg" width="500" id="imga" />
+    <br /><br /><br />
+    <div id="result" class="btn btn-react">샌드위치</div>
+  </body>
+</html>

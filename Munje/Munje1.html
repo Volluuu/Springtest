@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--외부 css파일 가져오기-->
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      th {
+        background-color: bisque;
+        border: 1px solid orange;
+        width: 200px;
+      }
+      td {
+        border: 1px solid orange;
+        width: 200px;
+        text-align: center;
+        font-family: "jua";
+      }
+    </style>
+  </head>
+  <body>
+    <table style="border: 4px double orange">
+      <h1 style="font-family: Nanum Pen Script">
+        자바스크랩트,css로 구구단 작성
+      </h1>
+      <script>
+        for (var dan = 2; dan <= 9; dan++) {
+          document.write("<th>" + dan + "단 </th>");
+        }
+        for (var i = 1; i <= 9; i++) {
+          document.write("<tr>");
+          for (var dan = 2; dan <= 9; dan++) {
+            document.write("<td>" + dan + "x" + i + "=" + dan * i + "</td>");
+          }
+          document.write("</tr>");
+        }
+      </script>
+    </table>
+  </body>
+</html>

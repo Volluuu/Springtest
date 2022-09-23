@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--외부 css파일 가져오기-->
+    <link rel="stylesheet" href="../style.css" />
+    <style></style>
+  </head>
+  <body>
+    <h1>
+      문제1: 미야자키 01.png~10.png 까지 for반복문을 이용해서 body 에 출력하기
+    </h1>
+    <script id="miya">
+      for (var i = 1; i <= 10; i++) {
+        var mphoto =
+          "<img src='../미야자키/" +
+          (i < 10 ? "0" : "") +
+          i +
+          ".png' width=130 height=180>";
+        //내부안에서 너비와 높이를 줄 수 있다.
+        //var s = "<img src='" + mphoto + "'class='mi'>"; -> 굳이 쓸필요 없었음.다이렉트로 출력 가능
+        document.write(mphoto);
+      }
+    </script>
+  </body>
+</html>
